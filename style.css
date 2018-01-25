@@ -1,17 +1,28 @@
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
 
 @font-face {
-  font-family: 'Indie Flower';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v9/10JVD_humAd5zP2yrFqw6hampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+	font-family: 'Indie Flower';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v9/10JVD_humAd5zP2yrFqw6hampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 @keyframes fadeintop {
@@ -38,9 +49,18 @@
 	}
 }
 
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
 body {
-	background-color: #4f4f4f;
+	background-image: url("bg.jpg");
+	background-color: #2092ce;
+	background-repeat: no-repeat;
 	font-family: "Roboto", sans-serif;
+	height: 100%;
+	overflow: auto;
 }
 
 h1 {
@@ -48,7 +68,7 @@ h1 {
 	color: #fff;
 	text-align: center;
 	letter-spacing: 3px;
-	padding-bottom: 10px;
+	margin-bottom: 10px;
 	font-family: "Indie Flower", cursive;
 	animation-name: fadeinleft;
 	animation-duration: 2s;
@@ -60,6 +80,9 @@ h2 {
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
+	margin-top: 35vh;
+	animation-name: fadein;
+	animation-duration: 4s;
 }
 
 h3 {
@@ -77,10 +100,6 @@ h4 {
 	text-align: center;
 }
 
-a {
-	text-decoration: none;
-}
-
 footer {
 	background-color: #e8e8e8;
 }
@@ -88,9 +107,9 @@ footer {
 .mainpic {
 	display: block;
 	margin: 0 auto;
-	margin-top: 25vh;
+	margin-top: 20vh;
 	margin-bottom: 3vh;
-	border: 5px solid #c7b0a0;
+	border: 5px solid #a2a2a2;
 	border-radius: 50%;
 	width: 250px;
 	animation-name: fadeintop;
@@ -113,8 +132,10 @@ footer {
 	grid-row-gap: 0;
 	margin-left: 10%;
 	margin-right: 10%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	animation-name: fadein;
+	animation-duration: 4s;
 }
 
 .container-links {
@@ -125,16 +146,22 @@ footer {
 
 .col {
 	border: 2px solid #a2a2a2;
-	border-radius: 20px;
+	border-radius: 10px;
 	background-color: #e8e8e8;
 	padding: 1em;
 }
 
-.spacing {
-	padding-bottom: 30vh;
+.nounderline {
+	text-decoration: none;
 }
 
-@media only screen and (max-width : 710px) {
+@media only screen and (min-width: 1440px), only screen and (min-height: 900px) {
+	body {
+		background-size: 100% 100%;
+	}
+}
+
+@media only screen and (max-width: 710px) {
 	.container {
 		grid-template-columns: 1fr;
 		grid-column-gap: 0;
